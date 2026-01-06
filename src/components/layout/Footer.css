@@ -1,0 +1,91 @@
+.footer {
+  background-color: #f9f9f9;
+  padding: 60px 0 20px;
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-icon {
+  font-size: 1.5rem;
+  color: #888;
+}
