@@ -20,7 +20,7 @@ const PromotionalBanners: React.FC = () => {
               </button>
             </div>
             <img 
-              src="https://images.unsplash.com/photo-1581579186913-45ac3e6e3dd2?auto=format&fit=crop&w=400&q=80" 
+              src="https://static.vecteezy.com/system/resources/previews/036/409/468/non_2x/delivery-man-riding-a-yellow-scooter-isolated-on-white-background-food-delivery-man-cartoon-style-illustration-vector.jpg" 
               alt="Delivery Man" 
               className="promo-image" 
             />
