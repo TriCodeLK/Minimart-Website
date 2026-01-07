@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h3>Contact Us</h3>
             <div className="footer-contact">
-              <p><MapPin size={18} /> 3 Newyork, USA</p>
-              <p><Phone size={18} /> 546-548-5687</p>
+              <p><MapPin size={18} /> No 3, Kings Rd, Kollupitiya, Sri Lanka</p>
+              <p><Phone size={18} /> +94-724-123-456</p>
               <p><Mail size={18} /> support@grocer.com</p>
             </div>
           </div>
@@ -55,7 +55,6 @@ const Footer: React.FC = () => {
             {/* Payment Icons */}
             <span>VISA</span>
             <span>MasterCard</span>
-            <span>PayPal</span>
           </div>
         </div>
       </div>

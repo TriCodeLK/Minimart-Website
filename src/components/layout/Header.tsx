@@ -9,9 +9,9 @@ const Header: React.FC = () => {
       <div className="header-top">
         <div className="container">
           <div className="header-contact-info">
-            <span><MapPin size={16} /> 3 Newyork, USA</span>
+            <span><MapPin size={16} /> No 3, Kings Rd, Kollupitiya, Sri Lanka</span>
             <span><Clock size={16} /> Everyday from 10:00 AM to 08:00 PM</span>
-            <span><Phone size={16} /> 546-548-5687</span>
+            <span><Phone size={16} /> +94-724-123-456</span>
           </div>
           <div className="header-settings">
             {/* Currency and Language selectors can go here */}
