@@ -1,10 +1,12 @@
 import React from 'react';
+import Hero from '../components/home/Hero';
+import Features from '../components/home/Features';
 
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <h1>Welcome to Grocer</h1>
-      <p>Your one stop shop for fresh organic food.</p>
+      <Hero />
+      <Features />
     </div>
   );
 };
