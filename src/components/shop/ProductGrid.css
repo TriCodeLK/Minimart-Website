@@ -1,0 +1,105 @@
+.shop-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Reusing similar card styles but specific to shop grid if needed */
+.shop-product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-product-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: #e0e0e0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--secondary-color);
+}
+
+.page-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.page-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.page-btn.next {
+  width: auto;
+  padding: 0 20px;
+  border-radius: 20px;
+}
+
+/* Top Bar/Sort Bar */
+.shop-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.results-count {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.sort-select {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  color: var(--secondary-color);
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  border-color: var(--primary-color);
+}

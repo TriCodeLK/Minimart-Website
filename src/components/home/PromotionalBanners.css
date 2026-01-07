@@ -1,0 +1,132 @@
+.promo-section {
+  padding: 40px 0 60px;
+  background-color: #fff;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.promo-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  min-height: 280px;
+  transition: transform 0.3s;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.promo-card.bg-light-yellow {
+  background-color: #fdf0cc;
+  background-image: linear-gradient(to right, #fdf0cc 0%, #fae7b5 100%);
+}
+
+.promo-card.bg-light-green {
+  background-color: #dcfce7;
+  background-image: linear-gradient(to right, #dcfce7 0%, #c4f9d6 100%);
+}
+
+.promo-content {
+  flex: 1;
+  z-index: 2;
+  max-width: 60%;
+}
+
+.promo-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.promo-tag.yellow {
+  background-color: #fca5a5;
+  color: #fff;
+}
+
+.promo-tag.green {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.promo-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.promo-desc {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.promo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.promo-btn.dark {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.promo-btn.green {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.promo-btn:hover {
+  opacity: 0.9;
+  transform: translateX(5px);
+}
+
+.promo-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 45%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 1;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+}
+
+@media (max-width: 768px) {
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .promo-card {
+    min-height: 220px;
+    padding: 30px;
+  }
+  
+  .promo-title {
+    font-size: 1.5rem;
+  }
+}

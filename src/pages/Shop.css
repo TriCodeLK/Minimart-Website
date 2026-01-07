@@ -1,0 +1,64 @@
+.shop-page {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+.shop-layout {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+/* Sidebar Styling */
+.shop-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+/* Main Content Styling */
+.shop-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Breadcrumb placeholder */
+.shop-breadcrumb {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.shop-breadcrumb a {
+  text-decoration: none;
+  color: #666;
+}
+
+.shop-breadcrumb span {
+  margin: 0 5px;
+}
+
+.current-page {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .shop-layout {
+    flex-direction: column;
+  }
+  
+  .shop-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
