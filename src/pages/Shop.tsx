@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SidebarFilter from '../components/shop/SidebarFilter';
+import ProductGrid from '../components/shop/ProductGrid';
 import './Shop.css';
 
 const Shop: React.FC = () => {
@@ -13,22 +15,11 @@ const Shop: React.FC = () => {
 
                 <div className="shop-layout">
                     {/* Sidebar Area */}
-                    <aside className="shop-sidebar">
-                        <h3>Filters</h3>
-                        <p>Category filters will go here...</p>
-                        <p>Price range will go here...</p>
-                    </aside>
+                    <SidebarFilter />
 
                     {/* Main Content Area */}
                     <main className="shop-content">
-                         <div className="shop-header">
-                            <h2>Shop</h2>
-                            {/* Sorting and result count will go here */}
-                         </div>
-                         
-                         <div className="products-placeholder">
-                            <p>Product grid loading...</p>
-                         </div>
+                        <ProductGrid />
                     </main>
                 </div>
             </div>
