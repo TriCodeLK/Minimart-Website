@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingCart, Star, ChevronRight } from 'lucide-react';
 import type { Product } from '../../data/mockData';
+import { useCart } from '../../context/CartContext';
 import './ProductGrid.css';
 
 interface ProductGridProps {
@@ -26,6 +27,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   startIndex,
   endIndex
 }) => {
+    const { addToCart } = useCart();
+
     // Helper to render stars
     const renderStars = (rating: number) => {
         return Array.from({ length: 5 }).map((_, index) => (
@@ -84,7 +87,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                                         <span className="product-price">${product.price.toFixed(2)}</span>
                                         {product.oldPrice && <span className="old-price">${product.oldPrice.toFixed(2)}</span>}
                                     </div>
-                                    <button className="add-btn">
+                                    <button className="add-btn" onClick={() => addToCart(product)}>
                                         Add <ShoppingCart size={14} style={{ display: 'inline', marginLeft: '5px' }} />
                                     </button>
                                 </div>
