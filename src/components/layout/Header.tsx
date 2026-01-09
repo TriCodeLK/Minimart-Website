@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingCart, User, MapPin, Phone, Clock, ShoppingBag } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const { cartCount } = useCart();
+
   return (
     <header className="header">
       <div className="header-top">
@@ -37,10 +40,13 @@ const Header: React.FC = () => {
               <User size={24} />
               <span>Login</span>
             </div>
-            <div className="action-item">
-              <ShoppingCart size={24} />
+            <Link to="/cart" className="action-item cart-action" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="cart-icon-wrapper">
+                <ShoppingCart size={24} />
+                {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+              </div>
               <span>Cart</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
