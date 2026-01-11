@@ -1,33 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ShoppingCart, Star, Minus, Plus, Share2, Heart } from 'lucide-react';
-import { products, type Product } from '../data/mockData';
+import { ShoppingCart, Star, Minus, Plus, Heart } from 'lucide-react';
+import { products } from '../data/mockData';
 import { useCart } from '../context/CartContext';
 import ProductGrid from '../components/shop/ProductGrid';
 import './ProductDetails.css';
 
 const ProductDetails: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams();
     const { addToCart } = useCart();
-    const [product, setProduct] = useState<Product | null>(null);
+    
+    // Track the previous ID to reset state on change
+    const [prevId, setPrevId] = useState<string | undefined>(id);
     const [quantity, setQuantity] = useState(1);
-    const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+
+    if (id !== prevId) {
+        setPrevId(id);
+        setQuantity(1);
+    }
+    
+    // Derive product directly to avoid sync setState in effect
+    const product = useMemo(() => {
+        if (!id) return null;
+        const productId = parseInt(id, 10);
+        return products.find(p => p.id === productId) || null;
+    }, [id]);
+
+    const relatedProducts = useMemo(() => {
+        if (!product) return [];
+        return products
+            .filter(p => p.category === product.category && p.id !== product.id)
+            .slice(0, 4);
+    }, [product]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        if (id) {
-            const found = products.find(p => p.id === parseInt(id));
-            setProduct(found || null);
-            setQuantity(1);
-
-            if (found) {
-                // Find related products (same category, excluding current)
-                const related = products
-                    .filter(p => p.category === found.category && p.id !== found.id)
-                    .slice(0, 4);
-                setRelatedProducts(related);
-            }
-        }
     }, [id]);
 
     if (!product) {
