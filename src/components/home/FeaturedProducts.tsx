@@ -58,11 +58,6 @@ const FeaturedProducts: React.FC = () => {
                 <Link to={`/product/${product.id}`}>
                     <img src={product.image} alt={product.name} className="product-image" />
                 </Link>
-                <div className="product-overlay">
-                    <button className="icon-btn" onClick={() => addToCart(product)}>
-                        <ShoppingCart size={18} />
-                    </button>
-                </div>
               </div>
               <div className="product-details">
                 <span className="product-category">{product.category}</span>
