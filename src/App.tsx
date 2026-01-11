@@ -3,6 +3,8 @@ import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import ProductDetails from './pages/ProductDetails';
 import { CartProvider } from './context/CartContext';
 import './App.css';
 
@@ -14,7 +16,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/category" element={<Shop />} /> 
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
         </Layout>
       </CartProvider>

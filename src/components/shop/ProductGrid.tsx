@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ShoppingCart, Star, ChevronRight } from 'lucide-react';
 import type { Product } from '../../data/mockData';
 import { useCart } from '../../context/CartContext';
@@ -74,11 +75,15 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                         <div key={product.id} className="shop-product-card">
                             <div className="product-image-container">
                                 {product.tag && <span className="product-tag">{product.tag}</span>}
-                                <img src={product.image} alt={product.name} className="product-image" />
+                                <Link to={`/product/${product.id}`}>
+                                    <img src={product.image} alt={product.name} className="product-image" />
+                                </Link>
                             </div>
                             <div className="product-details">
                                 <span className="product-category">{product.category}</span>
-                                <h3 className="product-name">{product.name} {product.weight}</h3>
+                                <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <h3 className="product-name">{product.name} {product.weight}</h3>
+                                </Link>
                                 <div className="product-rating">
                                     {renderStars(product.rating)}
                                 </div>
